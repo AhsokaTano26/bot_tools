@@ -21,35 +21,7 @@ __plugin_meta__ = PluginMetadata(
 config = get_plugin_config(Config)
 scheduler = require("nonebot_plugin_apscheduler").scheduler
 
-
-modify_nickname = on_command("修改群昵称", aliases={"setcard"}, priority=5)
-
-
-@modify_nickname.handle()
-async def handle_set_card(bot: Bot, event: Event):
-    """
-    处理修改群昵称的命令。
-
-    参数:
-        bot: NoneBot Bot 对象
-        event: 接收到的事件对象，包含 message 属性
-    """
-
-    try:
-        group_id = event.group_id
-    except ValueError:
-        await modify_nickname.finish("❌ 群号必须是数字。")
-
-    try:
-        group_info = await bot.get_group_info(
-            group_id=group_id,  # 目标群的群号
-        )
-        print(group_info)
-        await modify_nickname.send(f"✅ 成功{group_info}")
-    except Exception as e:
-        await modify_nickname.finish(f"❌ 失败：{e}")
-
-@scheduler.scheduled_job(CronTrigger(hour=23, minute=0))
+@scheduler.scheduled_job(CronTrigger(hour=23, minute=00))
 async def auto_send_msg_func():
     try:
         bot = get_bot()
@@ -64,9 +36,10 @@ async def auto_send_msg_func():
             extra = bir_msg.extra
             group_list = await GrouPManger.get_all_student_id(db_session)
             for group in group_list:
-                group_id = group.group_id
-                group_name = group.group_name
-                bir_name = group.birthday_name
+                groupmsg = await GrouPManger.get_Sign_by_student_id(db_session, group)
+                group_id = groupmsg.group_id
+                group_name = groupmsg.group_name
+                bir_name = groupmsg.birthday_name
 
                 birth_name = f"{group_name}({name}{bir_name})"
                 try:
@@ -80,14 +53,15 @@ async def auto_send_msg_func():
         elif bir_msg is None:
             group_list = await GrouPManger.get_all_student_id(db_session)
             for group in group_list:
-                group_id = group.group_id
-                group_name = group.group_name
+                groupmsg = await GrouPManger.get_Sign_by_student_id(db_session, group)
+                group_id = groupmsg.group_id
+                group_name = groupmsg.group_name
                 try:
                     group_info = await bot.get_group_info(group_id=group_id)
                     logger.info(f"✅ 成功获取群 {group_id} 的群信息")
                 except Exception as e:
                     logger.error(f"❌ 修改群信息失败：{e}")
-                if group_info.group_name != group_name:
+                if group_info['group_name'] != group_name:
                     try:
                         await bot.set_group_name(
                             group_id=group_id,  # 目标群的群号
