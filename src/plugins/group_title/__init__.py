@@ -1,11 +1,9 @@
 from nonebot import get_plugin_config, on_command, require, get_bot
 from nonebot.plugin import PluginMetadata
-from nonebot.adapters.onebot.v11 import Bot, Message
-from nonebot.adapters import Event
 from nonebot_plugin_orm import get_session
 from nonebot.log import logger
 from apscheduler.triggers.cron import CronTrigger
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from .config import Config
 from .models_method import BanGManger, GrouPManger
@@ -29,7 +27,8 @@ async def auto_send_msg_func():
         logger.error(f"获取在线bot错误：{e}")
     async with get_session() as db_session:
         now = datetime.now()
-        formatted_datetime = now.strftime("%m-%d")
+        next_day = now + timedelta(days=1)
+        formatted_datetime = next_day.strftime("%m-%d")
         bir_msg = await BanGManger.get_Sign_by_student_id(db_session,formatted_datetime)
         if bir_msg:
             name = bir_msg.name
@@ -60,7 +59,7 @@ async def auto_send_msg_func():
                     group_info = await bot.get_group_info(group_id=group_id)
                     logger.info(f"✅ 成功获取群 {group_id} 的群信息")
                 except Exception as e:
-                    logger.error(f"❌ 修改群信息失败：{e}")
+                    logger.error(f"❌ 获取群信息失败：{e}")
                 if group_info['group_name'] != group_name:
                     try:
                         await bot.set_group_name(
