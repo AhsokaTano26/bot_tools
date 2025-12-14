@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Generate Tags
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         uses: docker/metadata-action@v4
         id: metadata
         with:
@@ -41,7 +41,7 @@ jobs:
             type=raw,value=latest 
 
       - name: Build and Publish
-        if: steps.metadata.outputs.tags != ''
+#        if: steps.metadata.outputs.tags != ''
         uses: docker/build-push-action@v4
         with:
           context: .
