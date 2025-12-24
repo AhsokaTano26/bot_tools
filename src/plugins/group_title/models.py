@@ -12,4 +12,4 @@ class GrouP(Model):
     __tablename__ = "Group"
     group_id = Column(INT, primary_key=True, nullable=True)
     group_name = Column(String(255), nullable=True)
-    birthday_name = Column(String(255), nullable=True)
+    birthday_type = Column(INT, nullable=True)

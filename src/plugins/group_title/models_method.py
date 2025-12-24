@@ -40,7 +40,7 @@ class GrouPManger:
         return {row[0] for row in result}
 
     @classmethod
-    async def get_Sign_by_student_id(cls, session: async_scoped_session, student_id: str) -> Optional[GrouP]:
+    async def get_Sign_by_student_id(cls, session: async_scoped_session, student_id: int) -> Optional[GrouP]:
         """根据 student_id 获取单个信息"""
         return await session.get(GrouP, student_id)
 
