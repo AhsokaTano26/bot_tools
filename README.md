@@ -7,7 +7,6 @@
 3. writing your plugins under `src/plugins` folder.
 4. run your bot using `nb run --reload` .
 
-
 ## Documentation
 
 See [Docs](https://nonebot.dev/)
