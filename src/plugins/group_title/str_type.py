@@ -10,12 +10,3 @@ class StrType:
             return dic[bir_type]
         except:
             return group_name
-
-
-a = StrType().type(
-    name="name",
-    group_name="groupmsg.group_name",
-    bir_type=3,
-)
-
-print(a)
