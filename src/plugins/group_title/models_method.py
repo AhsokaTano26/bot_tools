@@ -13,7 +13,7 @@ class BanGManger:
         return {row[0] for row in result}
 
     @classmethod
-    async def get_Sign_by_student_id(cls, session: async_scoped_session, student_id: str) -> Optional[BanG]:
+    async def get_Sign_by_student_id(cls, session: async_scoped_session, student_id: int) -> Optional[BanG]:
         """根据 student_id 获取单个信息"""
         return await session.get(BanG, student_id)
 

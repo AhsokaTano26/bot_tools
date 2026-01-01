@@ -117,7 +117,7 @@ async def auto_send_msg_func():
                 birth_name = StrType().type(
                     name=name,
                     group_name=groupmsg.group_name,
-                    bir_type=groupmsg.birthday_name,
+                    bir_type=groupmsg.birthday_type,
                 )
 
                 try:
