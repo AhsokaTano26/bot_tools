@@ -13,6 +13,14 @@ from .models_method import DBManager
 from .models import Tag, GrouP
 from .str_type import StrType
 
+async def get_group_name(group_id: int) -> str:
+    try:
+        bot = get_bot()
+        group_info = await bot.get_group_info(group_id=group_id, no_cache=False)
+        return group_info.get("group_name", "未知群聊")
+    except Exception as e:
+        logger.error(f"获取群 {group_id} 信息失败: {e}")
+        return "未知群聊"
 
 # --- 1. 定时任务：每天 23:00 修改名片 ---
 
@@ -128,11 +136,18 @@ async def _(event: GroupMessageEvent, arg: Message = CommandArg()):
     if event.sender.role not in ["admin", "owner"] and str(event.user_id) not in event.bot.config.superusers:
         await sub_tag.finish("❌ 只有群管理或超管可以执行此操作")
 
-    tag_name = arg.extract_plain_text().strip()
+    command = arg.extract_plain_text().strip()
+    tag_name = command.split(" ")[0]
+    bir_type = int(command.split(" ")[1])
+
+    group_name = str(get_group_name(event.group_id))
     if not tag_name:
         await sub_tag.finish("用法: 订阅标签 标签名")
 
-    res = await DBManager.subscribe_group_tag(event.group_id, tag_name)
+    res = await DBManager.subscribe_group_tag(group_id=event.group_id,
+                                              group_name=group_name,
+                                              tag_name=tag_name,
+                                              bir_type=bir_type)
     await sub_tag.finish(f"{'✅' if res == 'success' else '❌'} {res}")
 
 help_msg = on_command("help", priority=10, block=True)

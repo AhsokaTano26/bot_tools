@@ -48,7 +48,7 @@ class DBManager:
 
     # --- 群组订阅相关 ---
     @staticmethod
-    async def subscribe_group_tag(group_id: int, tag_name: str) -> str:
+    async def subscribe_group_tag(group_id: int, group_name: str, tag_name: str, bir_type: int) -> str:
         # 1. 获取标签
         t_res = await get_session().execute(select(Tag).where(Tag.name == tag_name))
         tag = t_res.scalar_one_or_none()
@@ -57,7 +57,7 @@ class DBManager:
         # 2. 获取或创建群组
         group = await get_session().get(GrouP, group_id)
         if not group:
-            group = GrouP(group_id=group_id, group_name="未知群聊", birthday_type=1) # 修正默认值类型
+            group = GrouP(group_id=group_id, group_name=group_name, birthday_type=bir_type) # 修正默认值类型
             get_session().add(group)
             await get_session().flush()
 
