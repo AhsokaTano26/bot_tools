@@ -1,10 +1,7 @@
-import asyncio
 from datetime import datetime, timedelta
-from typing import List
-
 from nonebot import get_bot, on_command, require, logger
 from nonebot.params import CommandArg
-from nonebot.adapters.onebot.v11 import Message, GroupMessageEvent, Bot
+from nonebot.adapters.onebot.v11 import Bot, MessageEvent, GroupMessageEvent, MessageSegment ,Message
 from nonebot.permission import SUPERUSER
 
 # 确保定时任务插件已加载
@@ -77,7 +74,7 @@ async def birthday_remind():
 ### 2. 指令交互部分 ---
 
 # 增加成员 (超管)
-add_mem = on_command("增加成员", permission=SUPERUSER, priority=5, block=True)
+add_mem = on_command("增加成员", permission=SUPERUSER, priority=10, block=True)
 
 
 @add_mem.handle()
@@ -93,7 +90,7 @@ async def _(arg: Message = CommandArg()):
 
 
 # 增加标签 (超管)
-add_tag_cmd = on_command("增加标签", permission=SUPERUSER, priority=5, block=True)
+add_tag_cmd = on_command("增加标签", permission=SUPERUSER, priority=10, block=True)
 
 
 @add_tag_cmd.handle()
@@ -108,7 +105,7 @@ async def _(arg: Message = CommandArg()):
 
 
 # 关联成员与标签 (超管)
-bind_tag = on_command("关联标签", permission=SUPERUSER, priority=5, block=True)
+bind_tag = on_command("关联标签", permission=SUPERUSER, priority=10, block=True)
 
 
 @bind_tag.handle()
@@ -122,7 +119,7 @@ async def _(arg: Message = CommandArg()):
 
 
 # 订阅标签 (群管/超管)
-sub_tag = on_command("订阅标签", priority=5, block=True)
+sub_tag = on_command("订阅标签", priority=10, block=True)
 
 
 @sub_tag.handle()
@@ -138,11 +135,51 @@ async def _(event: GroupMessageEvent, arg: Message = CommandArg()):
     res = await DBManager.subscribe_group_tag(event.group_id, tag_name)
     await sub_tag.finish(f"{'✅' if res == 'success' else '❌'} {res}")
 
+help_msg = on_command("help", priority=10, block=True)
+
+
+@help_msg.handle()
+async def handle_help(bot: Bot, event: MessageEvent):
+    # 1. 定义帮助内容
+    help_content = [
+        "🎂 BanG Dream 生日提醒助手助手帮助",
+        "---------------------------",
+        "🔹 [用户指令]",
+        "订阅标签 [标签名] - (群管) 为本群订阅生日推送",
+        "---------------------------",
+        "🔸 [超管指令]",
+        "增加成员 名字 MM-DD [备注] - 录入新成员",
+        "增加标签 [标签名] - 创建新分类",
+        "关联标签 [名字] [标签] - 手动绑定成员与标签",
+        "查看标签 - 列出库中所有标签",
+        "查看订阅 - 查看全量群组订阅详情",
+        "查看成员 [月份] - 查看全量或特定月份生日成员",
+    ]
+
+    # 2. 构造合并转发节点
+    # 每个节点代表一条聊天记录
+    nodes = []
+    for line in help_content:
+        nodes.append(
+            MessageSegment.node_custom(
+                user_id=int(bot.self_id),
+                nickname="BanG Dream 生日助手",
+                content=line
+            )
+        )
+
+    # 3. 发送合并转发消息
+    # 注意：在群聊中发送和私聊中发送的 API 略有不同
+    if isinstance(event, GroupMessageEvent):
+        await bot.call_api("send_group_forward_msg", group_id=event.group_id, messages=nodes)
+    else:
+        # 私聊环境
+        await bot.call_api("send_private_forward_msg", user_id=event.user_id, messages=nodes)
 
 ### 3. 超管专用：查看所有订阅情况 ---
 
 # 查看订阅 (仅超管)
-view_subs = on_command("查看订阅", permission=SUPERUSER, priority=5, block=True)
+view_subs = on_command("查看订阅", permission=SUPERUSER, priority=10, block=True)
 
 
 @view_subs.handle()
@@ -171,7 +208,7 @@ async def _():
 
 
 # 查看所有标签 (仅超管)
-view_tags = on_command("查看标签", permission=SUPERUSER, priority=5, block=True)
+view_tags = on_command("查看标签", permission=SUPERUSER, priority=10, block=True)
 
 
 @view_tags.handle()
@@ -186,7 +223,7 @@ async def _():
 
 
 # 查看成员 (仅超管)
-view_members = on_command("查看成员", permission=SUPERUSER, priority=5, block=True)
+view_members = on_command("查看成员", permission=SUPERUSER, priority=10, block=True)
 
 
 @view_members.handle()
