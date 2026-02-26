@@ -164,32 +164,32 @@ help_msg = on_command("help", priority=10, block=True)
 @help_msg.handle()
 async def handle_help(bot: Bot, event: MessageEvent):
     # 1. 定义帮助内容
-    help_content = [
-        "🎂 BanG Dream 生日提醒助手助手帮助",
-        "---------------------------",
-        "🔹 [用户指令]",
-        "订阅标签 [标签名] - (群管) 为本群订阅生日推送",
-        "---------------------------",
-        "🔸 [超管指令]",
-        "增加成员 名字 MM-DD [备注] - 录入新成员",
-        "增加标签 [标签名] - 创建新分类",
-        "关联标签 [名字] [标签] - 手动绑定成员与标签",
-        "查看标签 - 列出库中所有标签",
-        "查看订阅 - 查看全量群组订阅详情",
-        "查看成员 [月份] - 查看全量或特定月份生日成员",
-    ]
+    help_content = '''
+🎂 BanG Dream 生日提醒助手助手帮助
+---------------------------
+🔹 [用户指令]
+订阅标签 [标签名] [生日提示类型]- (群管) 为本群订阅生日推送
+可选生日类型如下：
+1: "{group_name}🎉@{name}生日快乐🎉"
+2: "{group_name}(@{name}生日快乐!)"
+3: "{group_name}(@{name}生日快乐🎂)"
+---------------------------
+🔸 [超管指令]
+增加成员 名字 MM-DD [备注] - 录入新成员
+增加标签 [标签名] - 创建新分类
+关联标签 [名字] [标签] - 手动绑定成员与标签
+查看标签 - 列出库中所有标签
+查看订阅 - 查看全量群组订阅详情
+查看成员 [月份] - 查看全量或特定月份生日成员'''
 
     # 2. 构造合并转发节点
     # 每个节点代表一条聊天记录
     nodes = []
-    for line in help_content:
-        nodes.append(
+    nodes.append(
             MessageSegment.node_custom(
                 user_id=int(bot.self_id),
                 nickname="BanG Dream 生日助手",
-                content=line
-            )
-        )
+                content=help_content))
 
     # 3. 发送合并转发消息
     # 注意：在群聊中发送和私聊中发送的 API 略有不同
