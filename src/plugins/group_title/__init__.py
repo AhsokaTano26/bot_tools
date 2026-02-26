@@ -131,23 +131,31 @@ sub_tag = on_command("订阅标签", priority=10, block=True)
 
 
 @sub_tag.handle()
-async def _(event: GroupMessageEvent, arg: Message = CommandArg()):
-    # 简单的群权限校验
+async def _(bot: Bot, event: GroupMessageEvent, arg: Message = CommandArg()):
     if event.sender.role not in ["admin", "owner"] and str(event.user_id) not in event.bot.config.superusers:
         await sub_tag.finish("❌ 只有群管理或超管可以执行此操作")
 
-    command = arg.extract_plain_text().strip()
-    tag_name = command.split(" ")[0]
-    bir_type = int(command.split(" ")[1])
+    msg = arg.extract_plain_text().strip().split()
+    if len(msg) < 2:
+        await sub_tag.finish("⚠️ 用法: 订阅标签 [标签名] [提醒类型1-3]")
 
-    group_name = str(get_group_name(event.group_id))
-    if not tag_name:
-        await sub_tag.finish("用法: 订阅标签 标签名")
+    tag_name = msg[0]
+    try:
+        bir_type = int(msg[1])
+    except ValueError:
+        await sub_tag.finish("⚠️ 提醒类型必须是数字 (1, 2 或 3)")
 
-    res = await DBManager.subscribe_group_tag(group_id=event.group_id,
-                                              group_name=group_name,
-                                              tag_name=tag_name,
-                                              bir_type=bir_type)
+    # 核心修复：异步获取群名
+    group_info = await bot.get_group_info(group_id=event.group_id)
+    group_name = group_info.get("group_name", "未知群聊")
+
+    res = await DBManager.subscribe_group_tag(
+        group_id=event.group_id,
+        group_name=group_name,
+        tag_name=tag_name,
+        bir_type=bir_type
+    )
+
     await sub_tag.finish(f"{'✅' if res == 'success' else '❌'} {res}")
 
 help_msg = on_command("help", priority=10, block=True)

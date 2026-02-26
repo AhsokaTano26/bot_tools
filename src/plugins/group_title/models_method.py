@@ -49,25 +49,44 @@ class DBManager:
     # --- 群组订阅相关 ---
     @staticmethod
     async def subscribe_group_tag(group_id: int, group_name: str, tag_name: str, bir_type: int) -> str:
-        # 1. 获取标签
-        t_res = await get_session().execute(select(Tag).where(Tag.name == tag_name))
+        session = get_session()
+
+        # 1. 检查标签
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
         tag = t_res.scalar_one_or_none()
         if not tag: return "标签不存在"
 
         # 2. 获取或创建群组
-        group = await get_session().get(GrouP, group_id)
+        group = await session.get(GrouP, group_id)
         if not group:
-            group = GrouP(group_id=group_id, group_name=group_name, birthday_type=bir_type) # 修正默认值类型
-            get_session().add(group)
-            await get_session().flush()
+            group = GrouP(
+                group_id=group_id,
+                group_name=group_name,
+                birthday_type=bir_type
+            )
+            session.add(group)
+        else:
+            # 如果群已存在，更新一下群名和类型（可选）
+            group.group_name = group_name
+            group.birthday_type = bir_type
 
-        # 3. 关联订阅
-        stmt = select(GrouP).where(GrouP.group_id == group_id).options(selectinload(GrouP.subscribed_tags))
-        group_obj = (await get_session().execute(stmt)).scalar_one()
+        # 必须先 flush，确保数据库里有了这条记录，后续 join 查询才不会报 NoResultFound
+        await session.flush()
 
-        if tag in group_obj.subscribed_tags: return "已经订阅过了"
+        # 3. 关联订阅 (使用 selectinload 预加载关联表)
+        stmt = (
+            select(GrouP)
+            .where(GrouP.group_id == group_id)
+            .options(selectinload(GrouP.subscribed_tags))
+        )
+        result = await session.execute(stmt)
+        group_obj = result.scalar_one()  # 此时一定能找到了
+
+        if tag in group_obj.subscribed_tags:
+            return "已经订阅过了"
+
         group_obj.subscribed_tags.append(tag)
-        await get_session().commit()
+        await session.commit()
         return "success"
 
     @staticmethod
