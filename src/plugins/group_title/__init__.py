@@ -185,13 +185,13 @@ view_subs = on_command("查看订阅", permission=SUPERUSER, priority=10, block=
 @view_subs.handle()
 async def _():
     # 我们需要在 DBManager 中补一个获取全量订阅的方法，或者直接在这里查询
-    from .models_method import async_scoped_session
+    from nonebot_plugin_orm import get_session
     from sqlalchemy.orm import selectinload
     from sqlalchemy import select
 
     # 直接查询所有有订阅关系的群
     stmt = select(GrouP).options(selectinload(GrouP.subscribed_tags))
-    result = await async_scoped_session.execute(stmt)
+    result = await get_session().execute(stmt)
     groups = result.scalars().all()
 
     if not groups:
