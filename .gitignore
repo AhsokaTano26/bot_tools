@@ -10,7 +10,10 @@ __pycache__/
 
 # C extensions
 *.so
-
+db.sqlite3
+test.py
+test/
+.idea
 # Distribution / packaging
 .Python
 build/

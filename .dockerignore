@@ -5,6 +5,7 @@
 Dockerfile
 docker-compose.yml
 README.md
+db.sqlite3
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,node,visualstudiocode,jetbrains,macos,windows,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,node,visualstudiocode,jetbrains,macos,windows,linux

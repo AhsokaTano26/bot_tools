@@ -1,4 +1,4 @@
-INSERT INTO main.BanG (date, name, extra) VALUES
+INSERT INTO main.member (date, name, extra) VALUES
 /* 1月 */
 ('01-02', '明坂聪美', ''),
 ('01-05', '青木阳菜', ''),
