@@ -24,7 +24,7 @@ async def get_group_name(group_id: int) -> str:
 
 # --- 1. 定时任务：每天 23:00 修改名片 ---
 
-@scheduler.scheduled_job("cron", hour=23, minute=0, id="birthday_remind")
+@scheduler.scheduled_job("cron", hour=23, minute=40, id="birthday_remind")
 async def birthday_remind():
     try:
         bot = get_bot()
@@ -61,19 +61,18 @@ async def birthday_remind():
             # group.group_name: 数据库存的群名
             # all_birthday_names: 聚合后的名字
             # group.birthday_type: 数据库存的 1, 2, 3 类型
-            new_card = StrType.type(
+            new_name = StrType.type(
                 group_name=group.group_name,
                 name=all_birthday_names,
                 bir_type=group.birthday_type
             )
 
             # 6. 执行名片修改
-            await bot.set_group_card(
+            await bot.set_group_name(
                 group_id=int(group.group_id),
-                user_id=int(bot.self_id),
-                card=new_card
+                group_name=new_name
             )
-            logger.info(f"群 {group.group_id} 名片已更新为: {new_card}")
+            logger.info(f"群 {group.group_id} 名片已更新为: {new_name}")
 
         except Exception as e:
             logger.error(f"更新群 {group.group_id} 名片失败: {e}")
