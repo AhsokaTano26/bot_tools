@@ -24,7 +24,7 @@ async def get_group_name(group_id: int) -> str:
 
 # --- 1. 定时任务：每天 23:00 修改名片 ---
 
-@scheduler.scheduled_job("cron", hour=23, minute=40, id="birthday_remind")
+@scheduler.scheduled_job("cron", hour=23, minute=00, id="birthday_remind")
 async def birthday_remind():
     try:
         bot = get_bot()
