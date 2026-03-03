@@ -37,45 +37,58 @@ async def birthday_remind():
     members = await DBManager.get_members_by_date(tomorrow)
 
     if not members:
-        logger.info(f"日期 {tomorrow} 没有成员过生日，跳过任务。")
-        return
+        logger.info(f"日期 {tomorrow} 没有成员过生日")
 
-    # 2. 聚合所有生日成员的名字
-    # 结果示例: "和奏瑞依&Raychell&三泽纱千香"
-    all_birthday_names = "&".join([m.name for m in members])
+        groups = await DBManager.get_all_groups()
 
-    # 3. 收集所有相关的标签 ID，用于查找订阅群组
-    all_tag_ids = []
-    for m in members:
-        all_tag_ids.extend([t.id for t in m.tags])
+        for group in groups:
+            try:
+                new_name = group.group_name
+                await bot.set_group_name(
+                    group_id=int(group.group_id),
+                    group_name=new_name
+                )
+                logger.info(f"群 {group.group_id} 名片已更新为: {new_name}")
 
-    if not all_tag_ids:
-        return
+            except Exception as e:
+                logger.error(f"更新群 {group.group_id} 名片失败: {e}")
+    else:
+        # 2. 聚合所有生日成员的名字
+        # 结果示例: "和奏瑞依&Raychell&三泽纱千香"
+        all_birthday_names = "&".join([m.name for m in members])
 
-    # 4. 获取所有订阅了这些标签的群组对象
-    groups = await DBManager.get_subscribed_group_objects_by_tags(list(set(all_tag_ids)))
+        # 3. 收集所有相关的标签 ID，用于查找订阅群组
+        all_tag_ids = []
+        for m in members:
+            all_tag_ids.extend([t.id for t in m.tags])
 
-    for group in groups:
-        try:
-            # 5. 根据 StrType 获取格式化后的新名片
-            # group.group_name: 数据库存的群名
-            # all_birthday_names: 聚合后的名字
-            # group.birthday_type: 数据库存的 1, 2, 3 类型
-            new_name = StrType.type(
-                group_name=group.group_name,
-                name=all_birthday_names,
-                bir_type=group.birthday_type
-            )
+        if not all_tag_ids:
+            return
 
-            # 6. 执行名片修改
-            await bot.set_group_name(
-                group_id=int(group.group_id),
-                group_name=new_name
-            )
-            logger.info(f"群 {group.group_id} 名片已更新为: {new_name}")
+        # 4. 获取所有订阅了这些标签的群组对象
+        groups = await DBManager.get_subscribed_group_objects_by_tags(list(set(all_tag_ids)))
 
-        except Exception as e:
-            logger.error(f"更新群 {group.group_id} 名片失败: {e}")
+        for group in groups:
+            try:
+                # 5. 根据 StrType 获取格式化后的新名片
+                # group.group_name: 数据库存的群名
+                # all_birthday_names: 聚合后的名字
+                # group.birthday_type: 数据库存的 1, 2, 3 类型
+                new_name = StrType.type(
+                    group_name=group.group_name,
+                    name=all_birthday_names,
+                    bir_type=group.birthday_type
+                )
+
+                # 6. 执行名片修改
+                await bot.set_group_name(
+                    group_id=int(group.group_id),
+                    group_name=new_name
+                )
+                logger.info(f"群 {group.group_id} 名片已更新为: {new_name}")
+
+            except Exception as e:
+                logger.error(f"更新群 {group.group_id} 名片失败: {e}")
 
 
 ### 2. 指令交互部分 ---
@@ -168,18 +181,21 @@ async def handle_help(bot: Bot, event: MessageEvent):
 ---------------------------
 🔹 [用户指令]
 订阅标签 [标签名] [生日提示类型]- (群管) 为本群订阅生日推送
+
 可选生日类型如下：
 1: "{group_name}🎉@{name}生日快乐🎉"
 2: "{group_name}(@{name}生日快乐!)"
 3: "{group_name}(@{name}生日快乐🎂)"
+
+查看订阅 - 查看全量群组订阅详情
+查看成员 [月份] - 查看全量或特定月份生日成员
 ---------------------------
 🔸 [超管指令]
 增加成员 名字 MM-DD [备注] - 录入新成员
 增加标签 [标签名] - 创建新分类
 关联标签 [名字] [标签] - 手动绑定成员与标签
 查看标签 - 列出库中所有标签
-查看订阅 - 查看全量群组订阅详情
-查看成员 [月份] - 查看全量或特定月份生日成员'''
+'''
 
     # 2. 构造合并转发节点
     # 每个节点代表一条聊天记录
@@ -230,7 +246,7 @@ async def _():
 
 
 # 查看所有标签 (仅超管)
-view_tags = on_command("查看标签", permission=SUPERUSER, priority=10, block=True)
+view_tags = on_command("查看标签", priority=10, block=True)
 
 
 @view_tags.handle()
@@ -245,7 +261,7 @@ async def _():
 
 
 # 查看成员 (仅超管)
-view_members = on_command("查看成员", permission=SUPERUSER, priority=10, block=True)
+view_members = on_command("查看成员", priority=10, block=True)
 
 
 @view_members.handle()

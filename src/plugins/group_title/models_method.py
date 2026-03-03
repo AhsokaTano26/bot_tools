@@ -123,3 +123,9 @@ class DBManager:
         )
         res = await get_session().execute(stmt)
         return list(res.scalars().all())
+
+    @staticmethod
+    async def get_all_groups() -> List[GrouP]:
+        stmt = select(GrouP)
+        res = await get_session().execute(stmt)
+        return list(res.scalars().all())
