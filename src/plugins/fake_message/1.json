@@ -1,0 +1,2686 @@
+[{
+	'type': 'image',
+	'data': {
+		'summary': '[动画表情]',
+		'file': '20FEFFB56ADF8FEC12028175585154A0.jpg',
+		'sub_type': 1,
+		'url': 'https://multimedia.nt.qq.com.cn/download?appid=1407&fileid=EhSO1aNkdjOsSkMYlfHrtVJ9NaOBxxjm9Scg_woop6WqvKXGkQMyBHByb2RQgL2jAVoQy_pq_NqunIipbH1CO1g7VnoCvjSCAQJneg&rkey=CAQSMH7xXYaVoOUbNhCdw15BTcOpvgqIJbuhkijGAI6Di9tw3z2kV8y0T9itbOKnGZHYAg',
+		'file_size': '654054'
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894117',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749171,
+			'message_id': 2118393080,
+			'message_seq': 2118393080,
+			'real_id': 2118393080,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749176,
+			'message_id': 1614990797,
+			'message_seq': 1614990797,
+			'real_id': 1614990797,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749182,
+			'message_id': 398575228,
+			'message_seq': 398575228,
+			'real_id': 398575228,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749189,
+			'message_id': 1479697759,
+			'message_seq': 1479697759,
+			'real_id': 1479697759,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749195,
+			'message_id': 649394996,
+			'message_seq': 649394996,
+			'real_id': 649394996,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749201,
+			'message_id': 187589576,
+			'message_seq': 187589576,
+			'real_id': 187589576,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749207,
+			'message_id': 1669983719,
+			'message_seq': 1669983719,
+			'real_id': 1669983719,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749213,
+			'message_id': 1192923914,
+			'message_seq': 1192923914,
+			'real_id': 1192923914,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749218,
+			'message_id': 346487229,
+			'message_seq': 346487229,
+			'real_id': 346487229,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用 户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749224,
+			'message_id': 714901150,
+			'message_seq': 714901150,
+			'real_id': 714901150,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749230,
+			'message_id': 1837714450,
+			'message_seq': 1837714450,
+			'real_id': 1837714450,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1763749235,
+			'message_id': 273522981,
+			'message_seq': 273522981,
+			'real_id': 273522981,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894123',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539783,
+			'message_id': 1324959937,
+			'message_seq': 1324959937,
+			'real_id': 1324959937,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539785,
+			'message_id': 1586699756,
+			'message_seq': 1586699756,
+			'real_id': 1586699756,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539787,
+			'message_id': 414559221,
+			'message_seq': 414559221,
+			'real_id': 414559221,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539789,
+			'message_id': 977315283,
+			'message_seq': 977315283,
+			'real_id': 977315283,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539790,
+			'message_id': 2126074706,
+			'message_seq': 2126074706,
+			'real_id': 2126074706,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539792,
+			'message_id': 841873534,
+			'message_seq': 841873534,
+			'real_id': 841873534,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539794,
+			'message_id': 925759207,
+			'message_seq': 925759207,
+			'real_id': 925759207,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539796,
+			'message_id': 1883399845,
+			'message_seq': 1883399845,
+			'real_id': 1883399845,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539799,
+			'message_id': 1865636118,
+			'message_seq': 1865636118,
+			'real_id': 1865636118,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用 户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539801,
+			'message_id': 1772750039,
+			'message_seq': 1772750039,
+			'real_id': 1772750039,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539803,
+			'message_id': 1940762383,
+			'message_seq': 1940762383,
+			'real_id': 1940762383,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539805,
+			'message_id': 1434650618,
+			'message_seq': 1434650618,
+			'real_id': 1434650618,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539806,
+			'message_id': 892051219,
+			'message_seq': 892051219,
+			'real_id': 892051219,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539808,
+			'message_id': 950644628,
+			'message_seq': 950644628,
+			'real_id': 950644628,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539810,
+			'message_id': 1732632655,
+			'message_seq': 1732632655,
+			'real_id': 1732632655,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539812,
+			'message_id': 870086239,
+			'message_seq': 870086239,
+			'real_id': 870086239,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539813,
+			'message_id': 1989779505,
+			'message_seq': 1989779505,
+			'real_id': 1989779505,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539815,
+			'message_id': 1185936807,
+			'message_seq': 1185936807,
+			'real_id': 1185936807,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539817,
+			'message_id': 1791425784,
+			'message_seq': 1791425784,
+			'real_id': 1791425784,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539818,
+			'message_id': 203357420,
+			'message_seq': 203357420,
+			'real_id': 203357420,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539865,
+			'message_id': 1554262720,
+			'message_seq': 1554262720,
+			'real_id': 1554262720,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '想要原图来↓',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': '想要原图来↓'
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539866,
+			'message_id': 496471548,
+			'message_seq': 496471548,
+			'real_id': 496471548,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '[CQ:json,data={"app":"com.tencent.contact.lua"&#44;"desc":""&#44;"view":"contact"&#44;"bizsrc":"pindao.home"&#44;"ver":"0.0.0.1"&#44;"prompt":"&#91;分享频道&#93;"&#44;"appID":""&#44;"sourceName":""&#44;"actionData":""&#44;"actionData_A":""&#44;"sourceUrl":""&#44;"meta":{"contact":{"avatar":"https:\\/\\/groupprohead.gtimg.cn\\/618922304021240506\\/0?imageView2\\/1\\/w\\/100\\/h\\/100\\/format\\/&amp;t=1738928529643"&#44;"contact":"邀请加入：宝宝巴士"&#44;"jumpUrl":"https:\\/\\/pd.qq.com\\/qqweb\\/qunpro\\/share?_wv=3&amp;_wwv=128&amp;appChannel=share&amp;inviteCode=2ndNvbvMZOJ&amp;attaContentID=5c7d52b0bbde45b692d4834afda5db04&amp;businessType=9&amp;jumpInfo=ChBXHWhAHBuxDUB8n3cFu2L3EgN2cDE%3D"&#44;"nickname":"宝宝巴士"&#44;"tag":"推荐频道"&#44;"tagIcon":"http:\\/\\/downv6.qq.com\\/innovate\\/guild\\/tail_guild_logo.png"&#44;"avatarShape":1&#44;"ark_reserved1":"618922304021240506"}}&#44;"config":{"autosize":0&#44;"collect":1&#44;"ctime":1752448905&#44;"forward":1&#44;"height":225&#44;"reply":1&#44;"round":1&#44;"token":"a7a553217eb2c18ec47f9b26d984cf7e"&#44;"type":"normal"&#44;"width":526}&#44;"text":""&#44;"extraApps":&#91;&#93;&#44;"sourceAd":""&#44;"extra":""}]',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'json',
+				'data': {
+					'data': '{"app":"com.tencent.contact.lua","desc":"","view":"contact","bizsrc":"pindao.home","ver":"0.0.0.1","prompt":"[分享频道]","appID":"","sourceName":"","actionData":"","actionData_A":"","sourceUrl":"","meta":{"contact":{"avatar":"https:\\/\\/groupprohead.gtimg.cn\\/618922304021240506\\/0?imageView2\\/1\\/w\\/100\\/h\\/100\\/format\\/&t=1738928529643","contact":"邀请加入：宝宝巴士","jumpUrl":"https:\\/\\/pd.qq.com\\/qqweb\\/qunpro\\/share?_wv=3&_wwv=128&appChannel=share&inviteCode=2ndNvbvMZOJ&attaContentID=5c7d52b0bbde45b692d4834afda5db04&businessType=9&jumpInfo=ChBXHWhAHBuxDUB8n3cFu2L3EgN2cDE%3D","nickname":"宝宝巴士","tag":"推荐频道","tagIcon":"http:\\/\\/downv6.qq.com\\/innovate\\/guild\\/tail_guild_logo.png","avatarShape":1,"ark_reserved1":"618922304021240506"}},"config":{"autosize":0,"collect":1,"ctime":1752448905,"forward":1,"height":225,"reply":1,"round":1,"token":"a7a553217eb2c18ec47f9b26d984cf7e","type":"normal","width":526},"text":"","extraApps":[],"sourceAd":"","extra":""}'
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1764539866,
+			'message_id': 252358334,
+			'message_seq': 252358334,
+			'real_id': 252358334,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '进频道看最新裙↑',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': '进频道看最新裙↑'
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894129',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400539,
+			'message_id': 1556288768,
+			'message_seq': 1556288768,
+			'real_id': 1556288768,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400541,
+			'message_id': 410051679,
+			'message_seq': 410051679,
+			'real_id': 410051679,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400543,
+			'message_id': 1938204131,
+			'message_seq': 1938204131,
+			'real_id': 1938204131,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400545,
+			'message_id': 98696359,
+			'message_seq': 98696359,
+			'real_id': 98696359,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400546,
+			'message_id': 1975940596,
+			'message_seq': 1975940596,
+			'real_id': 1975940596,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400551,
+			'message_id': 1315492783,
+			'message_seq': 1315492783,
+			'real_id': 1315492783,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400553,
+			'message_id': 403238836,
+			'message_seq': 403238836,
+			'real_id': 403238836,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400556,
+			'message_id': 847871760,
+			'message_seq': 847871760,
+			'real_id': 847871760,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400558,
+			'message_id': 441297175,
+			'message_seq': 441297175,
+			'real_id': 441297175,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400560,
+			'message_id': 531021726,
+			'message_seq': 531021726,
+			'real_id': 531021726,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894135',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400356,
+			'message_id': 1768064576,
+			'message_seq': 1768064576,
+			'real_id': 1768064576,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400360,
+			'message_id': 2111836335,
+			'message_seq': 2111836335,
+			'real_id': 2111836335,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400362,
+			'message_id': 122768291,
+			'message_seq': 122768291,
+			'real_id': 122768291,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400364,
+			'message_id': 978492847,
+			'message_seq': 978492847,
+			'real_id': 978492847,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400370,
+			'message_id': 582967296,
+			'message_seq': 582967296,
+			'real_id': 582967296,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400373,
+			'message_id': 1091270283,
+			'message_seq': 1091270283,
+			'real_id': 1091270283,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400378,
+			'message_id': 864433511,
+			'message_seq': 864433511,
+			'real_id': 864433511,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400383,
+			'message_id': 1177403533,
+			'message_seq': 1177403533,
+			'real_id': 1177403533,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894141',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406065,
+			'message_id': 1432744656,
+			'message_seq': 1432744656,
+			'real_id': 1432744656,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406068,
+			'message_id': 913381366,
+			'message_seq': 913381366,
+			'real_id': 913381366,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406072,
+			'message_id': 1893994522,
+			'message_seq': 1893994522,
+			'real_id': 1893994522,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406077,
+			'message_id': 2135747112,
+			'message_seq': 2135747112,
+			'real_id': 2135747112,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406080,
+			'message_id': 1985312120,
+			'message_seq': 1985312120,
+			'real_id': 1985312120,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406082,
+			'message_id': 968784212,
+			'message_seq': 968784212,
+			'real_id': 968784212,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894147',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400828,
+			'message_id': 109224892,
+			'message_seq': 109224892,
+			'real_id': 109224892,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400831,
+			'message_id': 493799195,
+			'message_seq': 493799195,
+			'real_id': 493799195,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400833,
+			'message_id': 1363902621,
+			'message_seq': 1363902621,
+			'real_id': 1363902621,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752400838,
+			'message_id': 1710787575,
+			'message_seq': 1710787575,
+			'real_id': 1710787575,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894153',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750333993,
+			'message_id': 1269277975,
+			'message_seq': 1269277975,
+			'real_id': 1269277975,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750333995,
+			'message_id': 767253543,
+			'message_seq': 767253543,
+			'real_id': 767253543,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750333999,
+			'message_id': 1767423941,
+			'message_seq': 1767423941,
+			'real_id': 1767423941,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750334001,
+			'message_id': 934346097,
+			'message_seq': 934346097,
+			'real_id': 934346097,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750334004,
+			'message_id': 1273119257,
+			'message_seq': 1273119257,
+			'real_id': 1273119257,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750334005,
+			'message_id': 1863438331,
+			'message_seq': 1863438331,
+			'real_id': 1863438331,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750334007,
+			'message_id': 1510308741,
+			'message_seq': 1510308741,
+			'real_id': 1510308741,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1750334009,
+			'message_id': 472761188,
+			'message_seq': 472761188,
+			'real_id': 472761188,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894159',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406861,
+			'message_id': 1455389561,
+			'message_seq': 1455389561,
+			'real_id': 1455389561,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406863,
+			'message_id': 13331733,
+			'message_seq': 13331733,
+			'real_id': 13331733,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406865,
+			'message_id': 931862678,
+			'message_seq': 931862678,
+			'real_id': 931862678,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406867,
+			'message_id': 1289413288,
+			'message_seq': 1289413288,
+			'real_id': 1289413288,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406871,
+			'message_id': 434947664,
+			'message_seq': 434947664,
+			'real_id': 434947664,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406875,
+			'message_id': 921329873,
+			'message_seq': 921329873,
+			'real_id': 921329873,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406878,
+			'message_id': 1701612107,
+			'message_seq': 1701612107,
+			'real_id': 1701612107,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406882,
+			'message_id': 417552776,
+			'message_seq': 417552776,
+			'real_id': 417552776,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406884,
+			'message_id': 1416736908,
+			'message_seq': 1416736908,
+			'real_id': 1416736908,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406886,
+			'message_id': 202851719,
+			'message_seq': 202851719,
+			'real_id': 202851719,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406888,
+			'message_id': 1657526897,
+			'message_seq': 1657526897,
+			'real_id': 1657526897,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406890,
+			'message_id': 1365591892,
+			'message_seq': 1365591892,
+			'real_id': 1365591892,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406894,
+			'message_id': 997754591,
+			'message_seq': 997754591,
+			'real_id': 997754591,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406896,
+			'message_id': 1902260918,
+			'message_seq': 1902260918,
+			'real_id': 1902260918,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406899,
+			'message_id': 1090451933,
+			'message_seq': 1090451933,
+			'real_id': 1090451933,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406901,
+			'message_id': 1242480714,
+			'message_seq': 1242480714,
+			'real_id': 1242480714,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406903,
+			'message_id': 1641799419,
+			'message_seq': 1641799419,
+			'real_id': 1641799419,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406905,
+			'message_id': 1027721750,
+			'message_seq': 1027721750,
+			'real_id': 1027721750,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406906,
+			'message_id': 1771319545,
+			'message_seq': 1771319545,
+			'real_id': 1771319545,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406908,
+			'message_id': 127526565,
+			'message_seq': 127526565,
+			'real_id': 127526565,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894165',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406418,
+			'message_id': 1350987861,
+			'message_seq': 1350987861,
+			'real_id': 1350987861,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406422,
+			'message_id': 1458747074,
+			'message_seq': 1458747074,
+			'real_id': 1458747074,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406424,
+			'message_id': 1287014666,
+			'message_seq': 1287014666,
+			'real_id': 1287014666,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406426,
+			'message_id': 1675188515,
+			'message_seq': 1675188515,
+			'real_id': 1675188515,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}] > [黑背信天翁] : [{
+	'type': 'forward',
+	'data': {
+		'id': '7585049254520894171',
+		'content': [{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406065,
+			'message_id': 903499600,
+			'message_seq': 903499600,
+			'real_id': 903499600,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406068,
+			'message_id': 362639451,
+			'message_seq': 362639451,
+			'real_id': 362639451,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406072,
+			'message_id': 2123312973,
+			'message_seq': 2123312973,
+			'real_id': 2123312973,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406077,
+			'message_id': 1057154397,
+			'message_seq': 1057154397,
+			'real_id': 1057154397,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406080,
+			'message_id': 2133132103,
+			'message_seq': 2133132103,
+			'real_id': 2133132103,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		},
+		{
+			'self_id': 2438868634,
+			'user_id': 1094950020,
+			'time': 1752406082,
+			'message_id': 1817971354,
+			'message_seq': 1817971354,
+			'real_id': 1817971354,
+			'real_seq': '0',
+			'message_type': 'private',
+			'sender': {
+				'user_id': 1094950020,
+				'nickname': 'QQ用户',
+				'card': ''
+			},
+			'raw_message': '',
+			'font': 14,
+			'sub_type': 'friend',
+			'message': [{
+				'type': 'text',
+				'data': {
+					'text': ' '
+				}
+			}],
+			'message_format': 'array',
+			'post_type': 'message'
+		}]
+	}
+}]
