@@ -130,7 +130,7 @@ async def _(bot: Bot, event: MessageEvent, arg: Message = CommandArg()):
     if not raw_text:
         await fake_forward_cmd.finish(
             "用法:\n"
-            "伪造合并转发\n"
+            "tano\n"
             "昵称1|内容1\n"
             "昵称2|内容2|123456\n\n"
             "说明：每行一条节点，末尾可选填写 user_id。"
