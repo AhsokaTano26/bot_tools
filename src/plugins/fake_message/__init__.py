@@ -121,7 +121,7 @@ async def _(bot: Bot, args: Message = CommandArg()):
 
 
 # --- 超管专用：伪造合并转发消息 ---
-fake_forward_cmd = on_command("伪造合并转发", permission=SUPERUSER, priority=5, block=True)
+fake_forward_cmd = on_command("fff", permission=SUPERUSER, priority=5, block=True)
 
 
 @fake_forward_cmd.handle()
@@ -130,7 +130,7 @@ async def _(bot: Bot, event: MessageEvent, arg: Message = CommandArg()):
     if not raw_text:
         await fake_forward_cmd.finish(
             "用法:\n"
-            "tano\n"
+            "fff\n"
             "昵称1|内容1\n"
             "昵称2|内容2|123456\n\n"
             "说明：每行一条节点，末尾可选填写 user_id。"
