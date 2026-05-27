@@ -8,5 +8,5 @@ class StrType:
                 3: f"{group_name}(@{name}生日快乐🎂)"
             }
             return dic[bir_type]
-        except:
+        except Exception:
             return group_name

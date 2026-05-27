@@ -42,7 +42,7 @@ class GrouP(Base):
     __tablename__ = "group"
     group_id = Column(BigInteger, primary_key=True)
     group_name = Column(String(64))
-    birthday_type = Column(String(32))
+    birthday_type = Column(Integer)
 
 
 # --- 配置 ---

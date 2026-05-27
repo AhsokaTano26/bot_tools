@@ -11,6 +11,7 @@ __pycache__/
 # C extensions
 *.so
 db.sqlite3
+data/
 test.py
 test/
 .idea

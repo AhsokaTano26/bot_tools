@@ -1,23 +1,87 @@
+import re
 from typing import List, Optional
-from sqlalchemy import select
+from sqlalchemy import select, delete
 from sqlalchemy.orm import selectinload
 from nonebot_plugin_orm import get_session
 from .models import Member, Tag, GrouP, MemberTag, GroupSub
 
+
+def validate_date(date_str: str) -> bool:
+    """校验日期是否为合法的 MM-DD 格式"""
+    if not re.match(r"^\d{2}-\d{2}$", date_str):
+        return False
+    month, day = int(date_str[:2]), int(date_str[3:])
+    return 1 <= month <= 12 and 1 <= day <= 31
+
+
 class DBManager:
     # --- 成员相关 ---
     @staticmethod
-    async def add_member(name: str, date: str, extra: str = "") -> bool:
-        new_m = Member(name=name, date=date, extra=extra)
-        # 调用 get_session() 获取当前实例
-        get_session().add(new_m)
-        await get_session().commit()
+    async def add_member(name: str, date: str, extra: str = "") -> str:
+        """添加成员，返回结果消息"""
+        session = get_session()
+        exists = await session.execute(select(Member).where(Member.name == name))
+        if exists.scalar_one_or_none():
+            return f"成员 [{name}] 已存在"
+        session.add(Member(name=name, date=date, extra=extra))
+        await session.commit()
+        return "success"
+
+    @staticmethod
+    async def delete_member(name: str) -> bool:
+        """删除成员及其关联关系"""
+        session = get_session()
+        result = await session.execute(select(Member).where(Member.name == name))
+        member = result.scalar_one_or_none()
+        if not member:
+            return False
+        await session.delete(member)
+        await session.commit()
         return True
+
+    @staticmethod
+    async def update_member(name: str, new_name: str = None, new_date: str = None) -> str:
+        """修改成员信息，返回结果消息"""
+        session = get_session()
+        result = await session.execute(select(Member).where(Member.name == name))
+        member = result.scalar_one_or_none()
+        if not member:
+            return "成员不存在"
+        if new_name:
+            dup = await session.execute(select(Member).where(Member.name == new_name))
+            if dup.scalar_one_or_none():
+                return f"名字 [{new_name}] 已被占用"
+            member.name = new_name
+        if new_date:
+            member.date = new_date
+        await session.commit()
+        return "success"
+
+    @staticmethod
+    async def batch_add_members(members: List[tuple]) -> tuple:
+        """批量添加成员，返回 (新增数, 更新数, 已存在同日期名字列表)"""
+        session = get_session()
+        added = 0
+        updated = 0
+        skipped = []
+        for name, date in members:
+            result = await session.execute(select(Member).where(Member.name == name))
+            existing = result.scalar_one_or_none()
+            if existing:
+                if existing.date == date:
+                    skipped.append(name)
+                else:
+                    existing.date = date
+                    updated += 1
+            else:
+                session.add(Member(name=name, date=date))
+                added += 1
+        await session.commit()
+        return added, updated, skipped
 
     @staticmethod
     async def get_members_by_date(date: str) -> List[Member]:
         stmt = select(Member).where(Member.date == date).options(selectinload(Member.tags))
-        # 所有 execute 都要加 ()
         result = await get_session().execute(stmt)
         return list(result.scalars().all())
 
@@ -29,6 +93,18 @@ class DBManager:
             return False
         get_session().add(Tag(name=name))
         await get_session().commit()
+        return True
+
+    @staticmethod
+    async def delete_tag(name: str) -> bool:
+        """删除标签及其所有关联关系"""
+        session = get_session()
+        result = await session.execute(select(Tag).where(Tag.name == name))
+        tag = result.scalar_one_or_none()
+        if not tag:
+            return False
+        await session.delete(tag)
+        await session.commit()
         return True
 
     @staticmethod
@@ -45,6 +121,31 @@ class DBManager:
         m.tags.append(t)
         await get_session().commit()
         return "success"
+
+    @staticmethod
+    async def unbind_member_tag(member_name: str, tag_name: str) -> str:
+        """取消成员与标签的关联"""
+        session = get_session()
+        m_res = await session.execute(
+            select(Member).where(Member.name == member_name).options(selectinload(Member.tags))
+        )
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
+        m, t = m_res.scalar_one_or_none(), t_res.scalar_one_or_none()
+
+        if not m or not t:
+            return "成员或标签不存在"
+        if t not in m.tags:
+            return "该成员未关联此标签"
+
+        m.tags.remove(t)
+        await session.commit()
+        return "success"
+
+    @staticmethod
+    async def get_all_tags() -> List[Tag]:
+        stmt = select(Tag)
+        res = await get_session().execute(stmt)
+        return list(res.scalars().all())
 
     # --- 群组订阅相关 ---
     @staticmethod
@@ -66,21 +167,19 @@ class DBManager:
             )
             session.add(group)
         else:
-            # 如果群已存在，更新一下群名和类型（可选）
             group.group_name = group_name
             group.birthday_type = bir_type
 
-        # 必须先 flush，确保数据库里有了这条记录，后续 join 查询才不会报 NoResultFound
         await session.flush()
 
-        # 3. 关联订阅 (使用 selectinload 预加载关联表)
+        # 3. 关联订阅
         stmt = (
             select(GrouP)
             .where(GrouP.group_id == group_id)
             .options(selectinload(GrouP.subscribed_tags))
         )
         result = await session.execute(stmt)
-        group_obj = result.scalar_one()  # 此时一定能找到了
+        group_obj = result.scalar_one()
 
         if tag in group_obj.subscribed_tags:
             return "已经订阅过了"
@@ -90,16 +189,32 @@ class DBManager:
         return "success"
 
     @staticmethod
-    async def get_subscribed_groups_by_tags(tag_ids: List[int]) -> List[int]:
-        stmt = select(GrouP.group_id).join(GroupSub).where(GroupSub.tag_id.in_(tag_ids)).distinct()
-        res = await get_session().execute(stmt)
-        return list(res.scalars().all())
+    async def unsubscribe_group_tag(group_id: int, tag_name: str) -> str:
+        """取消群组对某标签的订阅"""
+        session = get_session()
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
+        tag = t_res.scalar_one_or_none()
+        if not tag:
+            return "标签不存在"
 
-    @staticmethod
-    async def get_all_tags() -> List[Tag]:
-        stmt = select(Tag)
-        res = await get_session().execute(stmt)
-        return list(res.scalars().all())
+        stmt = (
+            select(GrouP)
+            .where(GrouP.group_id == group_id)
+            .options(selectinload(GrouP.subscribed_tags))
+        )
+        result = await session.execute(stmt)
+        group = result.scalar_one_or_none()
+        if not group:
+            return "该群未订阅任何标签"
+        if tag not in group.subscribed_tags:
+            return "该群未订阅此标签"
+
+        group.subscribed_tags.remove(tag)
+        # 如果没有任何订阅了，删除群组记录
+        if not group.subscribed_tags:
+            await session.delete(group)
+        await session.commit()
+        return "success"
 
     @staticmethod
     async def get_all_members(month: Optional[str] = None) -> List[Member]:
@@ -113,12 +228,11 @@ class DBManager:
     @staticmethod
     async def get_subscribed_group_objects_by_tags(tag_ids: List[int]) -> List[GrouP]:
         """获取所有订阅了指定标签的群组完整对象"""
-        # 注意：nonebot-plugin-orm 的 scoped_session 不需要也不支持 async with 手动开启
-        from .models import GroupSub
         stmt = (
             select(GrouP)
             .join(GroupSub)
             .where(GroupSub.tag_id.in_(tag_ids))
+            .options(selectinload(GrouP.subscribed_tags))
             .distinct()
         )
         res = await get_session().execute(stmt)
@@ -126,6 +240,16 @@ class DBManager:
 
     @staticmethod
     async def get_all_groups() -> List[GrouP]:
-        stmt = select(GrouP)
+        stmt = select(GrouP).options(selectinload(GrouP.subscribed_tags))
         res = await get_session().execute(stmt)
         return list(res.scalars().all())
+
+    @staticmethod
+    async def update_group_name(group_id: int, new_name: str) -> bool:
+        session = get_session()
+        group = await session.get(GrouP, group_id)
+        if not group:
+            return False
+        group.group_name = new_name
+        await session.commit()
+        return True
