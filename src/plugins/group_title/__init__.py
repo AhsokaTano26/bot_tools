@@ -231,6 +231,36 @@ async def _(arg: Message = CommandArg()):
     await bind_tag.finish(f"{'✅' if res == 'success' else '❌'} {res}")
 
 
+# 批量关联 (超管)
+batch_bind_tag = on_command("批量关联", permission=SUPERUSER, priority=10, block=True)
+
+
+@batch_bind_tag.handle()
+async def _(arg: Message = CommandArg()):
+    text = arg.extract_plain_text().strip()
+    parts = text.split(None, 1)
+    if len(parts) < 2:
+        await batch_bind_tag.finish("用法: 批量关联 标签名 成员1, 成员2, ...")
+
+    tag_name = parts[0]
+    names = [n.strip() for n in parts[1].split(",") if n.strip()]
+    if not names:
+        await batch_bind_tag.finish("⚠️ 未解析到有效成员名")
+
+    bound, already, not_found = await DBManager.batch_bind_member_tag(names, tag_name)
+
+    msg_parts = []
+    if bound:
+        msg_parts.append(f"✅ 成功关联 {len(bound)} 人: {', '.join(bound)}")
+    if already:
+        msg_parts.append(f"⚠️ 已关联 {len(already)} 人: {', '.join(already)}")
+    if not_found:
+        msg_parts.append(f"❌ 未找到 {len(not_found)} 人: {', '.join(not_found)}")
+    if not msg_parts:
+        msg_parts.append("⚠️ 无有效数据")
+    await batch_bind_tag.finish("\n".join(msg_parts))
+
+
 # 取消关联 (超管)
 unbind_tag = on_command("取消关联", permission=SUPERUSER, priority=10, block=True)
 
@@ -346,6 +376,7 @@ async def handle_help(bot: Bot, event: MessageEvent):
 增加标签 [标签名] - 创建新分类
 删除标签 [标签名] - 删除指定分类
 关联标签 [名字] [标签] - 手动绑定成员与标签
+批量关联 [标签] 名字1, 名字2, ... - 批量绑定成员与标签
 取消关联 [名字] [标签] - 取消成员与标签的关联
 查看标签 - 列出库中所有标签
 查看订阅 - 查看全量群组订阅详情

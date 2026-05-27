@@ -126,6 +126,33 @@ class DBManager:
         return "success"
 
     @staticmethod
+    async def batch_bind_member_tag(member_names: List[str], tag_name: str) -> tuple:
+        """批量关联成员与标签，返回 (成功列表, 已存在列表, 不存在列表)"""
+        session = get_session()
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
+        tag = t_res.scalar_one_or_none()
+        if not tag:
+            return [], [], member_names  # 标签不存在，全部标记为不存在
+
+        bound = []
+        already = []
+        not_found = []
+        for name in member_names:
+            m_res = await session.execute(
+                select(Member).where(Member.name == name).options(selectinload(Member.tags))
+            )
+            member = m_res.scalar_one_or_none()
+            if not member:
+                not_found.append(name)
+            elif tag in member.tags:
+                already.append(name)
+            else:
+                member.tags.append(tag)
+                bound.append(name)
+        await session.commit()
+        return bound, already, not_found
+
+    @staticmethod
     async def unbind_member_tag(member_name: str, tag_name: str) -> str:
         """取消成员与标签的关联"""
         session = get_session()
