@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 from typing import List, Optional
 from sqlalchemy import select, delete
 from sqlalchemy.orm import selectinload
@@ -8,10 +9,11 @@ from .models import Member, Tag, GrouP, MemberTag, GroupSub
 
 def validate_date(date_str: str) -> bool:
     """校验日期是否为合法的 MM-DD 格式"""
-    if not re.match(r"^\d{2}-\d{2}$", date_str):
+    try:
+        datetime.strptime(date_str, "%m-%d")
+        return True
+    except ValueError:
         return False
-    month, day = int(date_str[:2]), int(date_str[3:])
-    return 1 <= month <= 12 and 1 <= day <= 31
 
 
 class DBManager:
@@ -170,6 +172,50 @@ class DBManager:
         m.tags.remove(t)
         await session.commit()
         return "success"
+
+    @staticmethod
+    async def batch_delete_members(member_names: List[str]) -> tuple:
+        """批量删除成员，返回 (成功列表, 不存在列表)"""
+        session = get_session()
+        deleted = []
+        not_found = []
+        for name in member_names:
+            result = await session.execute(select(Member).where(Member.name == name))
+            member = result.scalar_one_or_none()
+            if member:
+                await session.delete(member)
+                deleted.append(name)
+            else:
+                not_found.append(name)
+        await session.commit()
+        return deleted, not_found
+
+    @staticmethod
+    async def batch_unbind_member_tag(member_names: List[str], tag_name: str) -> tuple:
+        """批量取消关联，返回 (成功列表, 未关联列表, 不存在列表)"""
+        session = get_session()
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
+        tag = t_res.scalar_one_or_none()
+        if not tag:
+            return [], [], member_names
+
+        unbound = []
+        not_bound = []
+        not_found = []
+        for name in member_names:
+            m_res = await session.execute(
+                select(Member).where(Member.name == name).options(selectinload(Member.tags))
+            )
+            member = m_res.scalar_one_or_none()
+            if not member:
+                not_found.append(name)
+            elif tag not in member.tags:
+                not_bound.append(name)
+            else:
+                member.tags.remove(tag)
+                unbound.append(name)
+        await session.commit()
+        return unbound, not_bound, not_found
 
     @staticmethod
     async def get_all_tags() -> List[Tag]:

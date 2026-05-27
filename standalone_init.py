@@ -108,7 +108,7 @@ RAW_BIRTHDAY_DATA = [
     ('04-20', '进藤天音', ''), ('05-11', '松原花音', ''), ('05-12', '佐藤益木', ''),
     ('05-15', '林鼓子', ''), ('05-19', '山吹沙绫&冈田梦以', ''), ('05-22', '仓知玲凤', ''),
     ('05-27', '长崎爽世', ''), ('06-01', '祐天寺若麦', ''), ('06-16', '广町七深', ''),
-    ('06-18', '中上育实', ''), ('06-24', 'mika@远藤祐里香', ''), ('06-26', '三角初华', ''),
+    ('06-18', '中上育实', ''), ('06-24', 'mika&远藤祐里香', ''), ('06-26', '三角初华', ''),
     ('06-27', '若宫伊芙', ''), ('07-03', '宇田川亚子', ''), ('07-05', '纺木吏佐', ''),
     ('07-10', '立石凛', ''), ('07-14', '户山香澄', ''), ('07-16', '日笠阳子', ''),
     ('07-17', '朝日六花', ''), ('07-20', '夏芽', ''), ('07-30', '北泽育美', ''),
@@ -136,9 +136,11 @@ async def init_task():
         await conn.run_sync(Base.metadata.create_all)
 
     async with async_session() as session:
-        # 清理旧数据
+        # 清理旧数据（按外键依赖顺序删除）
         from sqlalchemy import delete
+        await session.execute(delete(group_sub))
         await session.execute(delete(member_tag))
+        await session.execute(delete(GrouP))
         await session.execute(delete(Member))
         await session.execute(delete(Tag))
         print("🧹 已清空旧数据，开始按独立成员拆分写入...")

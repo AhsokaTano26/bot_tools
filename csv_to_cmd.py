@@ -65,11 +65,8 @@ def main():
 
     print(f"\n# === 批量关联 (共 {len(all_names)} 人) ===")
     print("# 批量导入后，复制以下指令绑定标签：\n")
-    for i in range(0, len(all_names), BATCH_SIZE):
-        batch = all_names[i:i + BATCH_SIZE]
-        names_str = ", ".join(batch)
-        print(f"批量关联 BanG_Dream! {names_str}")
-        print()
+    print(f"批量关联 BanG_Dream! 全部")
+    print()
 
 
 if __name__ == "__main__":

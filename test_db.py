@@ -35,6 +35,7 @@ class Member(Base):
     id = Column(Integer, primary_key=True)
     date = Column(String(10))
     name = Column(String(64))
+    extra = Column(String(255), nullable=True)
     tags = relationship("Tag", secondary=member_tag, lazy="selectin")
 
 

@@ -48,8 +48,12 @@ async def birthday_remind():
         logger.info(f"日期 {tomorrow} 没有成员过生日")
         return
 
-    # 2. 聚合所有生日成员的名字
-    all_birthday_names = "&".join([m.name for m in members])
+    # 2. 聚合所有生日成员的名字（限制长度防止群名超限）
+    all_names = [m.name for m in members]
+    all_birthday_names = "&".join(all_names)
+    # QQ 群名限制约 60 字符，预留空间给模板文字
+    if len(all_birthday_names) > 30:
+        all_birthday_names = "&".join(all_names[:3]) + f"等{len(all_names)}人"
 
     # 3. 收集所有相关的标签 ID，用于查找订阅群组
     all_tag_ids = []
@@ -161,6 +165,32 @@ async def _(arg: Message = CommandArg()):
         await del_mem.finish(f"❌ 成员 [{name}] 不存在")
 
 
+# 批量删除成员 (超管)
+batch_del_mem = on_command("批量删除", permission=SUPERUSER, priority=10, block=True)
+
+
+@batch_del_mem.handle()
+async def _(arg: Message = CommandArg()):
+    text = arg.extract_plain_text().strip()
+    if not text:
+        await batch_del_mem.finish("用法: 批量删除 成员1, 成员2, ...")
+
+    names = [n.strip() for n in text.split(",") if n.strip()]
+    if not names:
+        await batch_del_mem.finish("⚠️ 未解析到有效成员名")
+
+    deleted, not_found = await DBManager.batch_delete_members(names)
+
+    msg_parts = []
+    if deleted:
+        msg_parts.append(f"✅ 已删除 {len(deleted)} 人: {', '.join(deleted)}")
+    if not_found:
+        msg_parts.append(f"❌ 未找到 {len(not_found)} 人: {', '.join(not_found)}")
+    if not msg_parts:
+        msg_parts.append("⚠️ 无有效数据")
+    await batch_del_mem.finish("\n".join(msg_parts))
+
+
 # 修改成员 (超管)
 edit_mem = on_command("修改成员", permission=SUPERUSER, priority=10, block=True)
 
@@ -174,7 +204,10 @@ async def _(arg: Message = CommandArg()):
     old_name = args[0]
     new_value = args[1]
 
-    if validate_date(new_value):
+    # 判断是否像日期格式 (XX-XX)
+    if re.match(r"^\d{2}-\d{2}$", new_value):
+        if not validate_date(new_value):
+            await edit_mem.finish(f"⚠️ 无效日期: {new_value}，应为合法的 MM-DD 格式")
         res = await DBManager.update_member(old_name, new_date=new_value)
     else:
         res = await DBManager.update_member(old_name, new_name=new_value)
@@ -240,10 +273,18 @@ async def _(arg: Message = CommandArg()):
     text = arg.extract_plain_text().strip()
     parts = text.split(None, 1)
     if len(parts) < 2:
-        await batch_bind_tag.finish("用法: 批量关联 标签名 成员1, 成员2, ...")
+        await batch_bind_tag.finish("用法: 批量关联 标签名 成员1, 成员2, ...\n用法: 批量关联 标签名 全部")
 
     tag_name = parts[0]
-    names = [n.strip() for n in parts[1].split(",") if n.strip()]
+    second_part = parts[1].strip()
+
+    # 支持 "全部" 关键字
+    if second_part in ("全部", "*"):
+        all_members = await DBManager.get_all_members()
+        names = [m.name for m in all_members]
+    else:
+        names = [n.strip() for n in second_part.split(",") if n.strip()]
+
     if not names:
         await batch_bind_tag.finish("⚠️ 未解析到有效成员名")
 
@@ -273,6 +314,36 @@ async def _(arg: Message = CommandArg()):
 
     res = await DBManager.unbind_member_tag(args[0], args[1])
     await unbind_tag.finish(f"{'✅' if res == 'success' else '❌'} {res}")
+
+
+# 批量取消关联 (超管)
+batch_unbind_tag = on_command("批量取消关联", permission=SUPERUSER, priority=10, block=True)
+
+
+@batch_unbind_tag.handle()
+async def _(arg: Message = CommandArg()):
+    text = arg.extract_plain_text().strip()
+    parts = text.split(None, 1)
+    if len(parts) < 2:
+        await batch_unbind_tag.finish("用法: 批量取消关联 标签名 成员1, 成员2, ...")
+
+    tag_name = parts[0]
+    names = [n.strip() for n in parts[1].split(",") if n.strip()]
+    if not names:
+        await batch_unbind_tag.finish("⚠️ 未解析到有效成员名")
+
+    unbound, not_bound, not_found = await DBManager.batch_unbind_member_tag(names, tag_name)
+
+    msg_parts = []
+    if unbound:
+        msg_parts.append(f"✅ 已取消关联 {len(unbound)} 人: {', '.join(unbound)}")
+    if not_bound:
+        msg_parts.append(f"⚠️ 未关联此标签 {len(not_bound)} 人: {', '.join(not_bound)}")
+    if not_found:
+        msg_parts.append(f"❌ 未找到 {len(not_found)} 人: {', '.join(not_found)}")
+    if not msg_parts:
+        msg_parts.append("⚠️ 无有效数据")
+    await batch_unbind_tag.finish("\n".join(msg_parts))
 
 
 # 订阅标签 (群管/超管)
@@ -373,11 +444,14 @@ async def handle_help(bot: Bot, event: MessageEvent):
 删除成员 名字 - 删除指定成员
 修改成员 原名字 新名字/新日期 - 修改成员名字或生日
 批量导入 名字1 MM-DD, 名字2 MM-DD, ... - 批量导入成员
+批量删除 名字1, 名字2, ... - 批量删除成员
 增加标签 [标签名] - 创建新分类
 删除标签 [标签名] - 删除指定分类
 关联标签 [名字] [标签] - 手动绑定成员与标签
 批量关联 [标签] 名字1, 名字2, ... - 批量绑定成员与标签
+批量关联 [标签] 全部 - 为所有成员绑定标签
 取消关联 [名字] [标签] - 取消成员与标签的关联
+批量取消关联 [标签] 名字1, 名字2, ... - 批量取消关联
 查看标签 - 列出库中所有标签
 查看订阅 - 查看全量群组订阅详情
 '''
