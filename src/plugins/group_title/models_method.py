@@ -59,10 +59,10 @@ class DBManager:
 
     @staticmethod
     async def batch_add_members(members: List[tuple]) -> tuple:
-        """批量添加成员，返回 (新增数, 更新数, 已存在同日期名字列表)"""
+        """批量添加成员，返回 (新增名字列表, 更新名字列表, 已存在同日期名字列表)"""
         session = get_session()
-        added = 0
-        updated = 0
+        added = []
+        updated = []
         skipped = []
         for name, date in members:
             result = await session.execute(select(Member).where(Member.name == name))
@@ -72,27 +72,29 @@ class DBManager:
                     skipped.append(name)
                 else:
                     existing.date = date
-                    updated += 1
+                    updated.append(name)
             else:
                 session.add(Member(name=name, date=date))
-                added += 1
+                added.append(name)
         await session.commit()
         return added, updated, skipped
 
     @staticmethod
     async def get_members_by_date(date: str) -> List[Member]:
+        session = get_session()
         stmt = select(Member).where(Member.date == date).options(selectinload(Member.tags))
-        result = await get_session().execute(stmt)
+        result = await session.execute(stmt)
         return list(result.scalars().all())
 
     # --- 标签相关 ---
     @staticmethod
     async def add_tag(name: str) -> bool:
-        exists = await get_session().execute(select(Tag).where(Tag.name == name))
+        session = get_session()
+        exists = await session.execute(select(Tag).where(Tag.name == name))
         if exists.scalar_one_or_none():
             return False
-        get_session().add(Tag(name=name))
-        await get_session().commit()
+        session.add(Tag(name=name))
+        await session.commit()
         return True
 
     @staticmethod
@@ -109,17 +111,18 @@ class DBManager:
 
     @staticmethod
     async def bind_member_tag(member_name: str, tag_name: str) -> str:
-        m_res = await get_session().execute(
+        session = get_session()
+        m_res = await session.execute(
             select(Member).where(Member.name == member_name).options(selectinload(Member.tags))
         )
-        t_res = await get_session().execute(select(Tag).where(Tag.name == tag_name))
+        t_res = await session.execute(select(Tag).where(Tag.name == tag_name))
         m, t = m_res.scalar_one_or_none(), t_res.scalar_one_or_none()
 
         if not m or not t: return "成员或标签不存在"
         if t in m.tags: return "已存在关联"
 
         m.tags.append(t)
-        await get_session().commit()
+        await session.commit()
         return "success"
 
     @staticmethod
@@ -143,8 +146,9 @@ class DBManager:
 
     @staticmethod
     async def get_all_tags() -> List[Tag]:
+        session = get_session()
         stmt = select(Tag)
-        res = await get_session().execute(stmt)
+        res = await session.execute(stmt)
         return list(res.scalars().all())
 
     # --- 群组订阅相关 ---
@@ -218,16 +222,18 @@ class DBManager:
 
     @staticmethod
     async def get_all_members(month: Optional[str] = None) -> List[Member]:
+        session = get_session()
         stmt = select(Member).options(selectinload(Member.tags))
         if month:
             stmt = stmt.where(Member.date.like(f"{month}-%"))
         stmt = stmt.order_by(Member.date)
-        res = await get_session().execute(stmt)
+        res = await session.execute(stmt)
         return list(res.scalars().all())
 
     @staticmethod
     async def get_subscribed_group_objects_by_tags(tag_ids: List[int]) -> List[GrouP]:
         """获取所有订阅了指定标签的群组完整对象"""
+        session = get_session()
         stmt = (
             select(GrouP)
             .join(GroupSub)
@@ -235,13 +241,14 @@ class DBManager:
             .options(selectinload(GrouP.subscribed_tags))
             .distinct()
         )
-        res = await get_session().execute(stmt)
+        res = await session.execute(stmt)
         return list(res.scalars().all())
 
     @staticmethod
     async def get_all_groups() -> List[GrouP]:
+        session = get_session()
         stmt = select(GrouP).options(selectinload(GrouP.subscribed_tags))
-        res = await get_session().execute(stmt)
+        res = await session.execute(stmt)
         return list(res.scalars().all())
 
     @staticmethod

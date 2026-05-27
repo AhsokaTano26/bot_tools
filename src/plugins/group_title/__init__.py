@@ -134,11 +134,11 @@ async def _(arg: Message = CommandArg()):
     added, updated, skipped = await DBManager.batch_add_members(members)
     msg_parts = []
     if added:
-        msg_parts.append(f"✅ 新增 {added} 名成员")
+        msg_parts.append(f"✅ 新增 {len(added)} 名成员: {', '.join(added)}")
     if updated:
-        msg_parts.append(f"🔄 更新 {updated} 名成员的生日日期")
+        msg_parts.append(f"🔄 更新 {len(updated)} 名成员的生日日期: {', '.join(updated)}")
     if skipped:
-        msg_parts.append(f"⚠️ 以下成员已存在且日期相同，已跳过: {', '.join(skipped)}")
+        msg_parts.append(f"⚠️ 已存在且日期相同，已跳过 {len(skipped)} 人: {', '.join(skipped)}")
     if not msg_parts:
         msg_parts.append("⚠️ 无有效数据")
     await batch_add_mem.finish("\n".join(msg_parts))
