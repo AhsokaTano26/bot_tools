@@ -17,13 +17,22 @@ enable_cmd = on_command("开启阅后即焚", priority=10, block=True)
 
 @enable_cmd.handle()
 async def _(bot: Bot, event: GroupMessageEvent):
+    # 权限等级映射
+    role_level = {"member": 0, "admin": 1, "owner": 2}
+
     # 检查 bot 是否为群管理
     try:
         bot_info = await bot.get_group_member_info(group_id=event.group_id, user_id=int(bot.self_id), no_cache=True)
-        if bot_info.get("role") not in ("admin", "owner"):
+        bot_role = bot_info.get("role", "member")
+        if bot_role not in ("admin", "owner"):
             await enable_cmd.finish("❌ 机器人不是群管理，无法开启阅后即焚")
     except Exception:
         await enable_cmd.finish("❌ 无法获取机器人权限信息")
+
+    # 检查用户权限不能高于或等于 bot
+    user_role = event.sender.role
+    if role_level.get(user_role, 0) >= role_level.get(bot_role, 0):
+        await enable_cmd.finish("❌ 你的权限不能高于或等于机器人")
 
     key = (event.group_id, event.user_id)
     auto_delete_users.add(key)
