@@ -8,7 +8,7 @@ from .config import Config
 auto_delete_users: set[tuple[int, int]] = set()
 
 # 延迟撤回时间（秒）
-DELETE_DELAY = 180
+DELETE_DELAY = 90
 
 
 # --- 开启阅后即焚 ---
