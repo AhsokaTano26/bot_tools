@@ -45,7 +45,20 @@ async def birthday_remind():
     members = await DBManager.get_members_by_date(tomorrow)
 
     if not members:
-        logger.info(f"日期 {tomorrow} 没有成员过生日")
+        logger.info(f"日期 {tomorrow} 没有成员过生日，恢复群名")
+        groups = await DBManager.get_all_groups()
+        for group in groups:
+            try:
+                current_info = await bot.get_group_info(group_id=int(group.group_id), no_cache=False)
+                current_name = current_info.get("group_name", "")
+                if current_name != group.group_name:
+                    await bot.set_group_name(
+                        group_id=int(group.group_id),
+                        group_name=group.group_name
+                    )
+                    logger.info(f"群 {group.group_id} 群名已恢复为: {group.group_name}")
+            except Exception as e:
+                logger.error(f"恢复群 {group.group_id} 群名失败: {e}")
         return
 
     # 2. 聚合所有生日成员的名字（限制长度防止群名超限）
